@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: kkk2z1-SMP
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    branch: main
+    healthCheckPath: /
+    # ポート指定を追加
+    envVars:
+      - key: PORT
+        value: 8081
+    # ポートバインディングを設定
+    ports:
+      - port: 25565
+      - port: 25577
+      - port: 8081
